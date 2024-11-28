@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: #ADD8E4;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 300px;
+    }
+
+    h1 {
+      color: blue;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button.active {
+      transform: scale(0.95);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    button.signin {
+      background-color: blue;
+      color: white;
+    }
+
+    button.login {
+      background-color: blue;
+      color: white;
+    }
+
+    button.logout {
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>WEATHER REPORTER</h1>
+
+  <button id="signinBtn" class="signin">Sign In
+    <a href="#" th:href="@{/signin}"></a>
+  </button>
+
+  <button id="loginBtn" class="login">Login
+    <a href="#" th:href="@{/home}"></a>
+  </button>
+
+
+  <button id="logoutBtn" class="logout">Logout
+    <a href="#" th:href="@{/logout}"></a>
+  </button>
+
+
+  <script>
+    const signinBtn = document.getElementById('signinBtn');
+    const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    let isLoggedIn = false;
+
+    signinBtn.addEventListener('click', () => {
+      isLoggedIn = false;
+      signinBtn.classList.add('active');
+      loginBtn.classList.remove('active');
+      logoutBtn.classList.remove('active');
+    });
+
+    loginBtn.addEventListener('click', () => {
+      isLoggedIn = true;
+      loginBtn.classList.add('active');
+      signinBtn.classList.remove('active');
+      logoutBtn.classList.add('active');
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      isLoggedIn = false;
+      logoutBtn.classList.remove('active');
+      loginBtn.classList.remove('active');
+      signinBtn.classList.add('active');
+    });
+  </script>
+</div>
+</body>
+</html>
+

@@ -23,6 +23,7 @@ public class ContentController {
 
   @GetMapping("/login")
   public String handleLogin() {
-    return "custom_login";
+    return "login";
   }
+
 }
