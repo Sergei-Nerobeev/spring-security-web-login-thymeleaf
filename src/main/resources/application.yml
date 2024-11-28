@@ -2,20 +2,20 @@ spring:
   application:
     name: weather-report
 
-  datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: 1234
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: 1234
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-      show-sql: true
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      show-sql: true
 
 server:
   error:
     include-message: always
 
-logging:
-  level:
-    org.springframework.security: trace
+#logging:
+#  level:
+#    org.springframework.security: trace
