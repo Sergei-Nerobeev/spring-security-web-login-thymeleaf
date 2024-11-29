@@ -1,71 +1,86 @@
+/* Global styles */
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e3a8a; /* Глубокий синий фон */
+    color: #ffffff; /* Белый текст */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.topnav {
-    overflow: hidden;
-    background-color: #fafafa;
-}
-
-.topnav a {
-    float: left;
-    color: #423d3d;
+/* Центрирование и оформление формы */
+.container {
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+    padding: 30px;
+    background-color: #ffffff; /* Белый фон для формы */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e3a8a; /* Глубокий синий цвет текста */
 }
 
-.topnav a.active {
-    background-color: #a8abab;
-    color: white;
+header i {
+    color: #1e3a8a; /* Иконка также синего цвета */
+    margin-right: 8px;
 }
 
-.all-browsers {
-    margin: 0;
-    padding: 5px;
-    background-color: lightgray;
+/* Стили формы */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.all-browsers > h1, .browser {
-    margin: 10px;
-    padding: 5px;
-}
-
-.browser {
-    background: white;
-}
-
-.browser > h2, p {
-    margin: 4px;
-    font-size: 90%;
-}
-
-footer {
-    margin-top: 400px;
-    text-align: center;
-    padding: 3px;
-    background-color: DarkSalmon;
-    color: white;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
+.form-group {
     width: 100%;
 }
 
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+input[type="text"],
+input[type="email"] {
+    width: 50%;
+    padding: 15px 20px; /* Увеличиваем размеры */
+    margin: 5px 0;
+    font-size: 1rem;
+    border: 2px solid #1e3a8a; /* Синий цвет рамки */
+    border-radius: 10px;
+    background-color: #f9fafb; /* Светло-серый фон */
+    color: #1e3a8a; /* Синий текст */
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
+input::placeholder {
+    color: #64748b; /* Серый цвет плейсхолдера */
+    font-size: 0.9rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb; /* Более яркий синий при фокусе */
+}
+
+/* Стили кнопки */
+button.btn-primary {
+    background-color: #1e3a8a; /* Синий фон кнопки */
+    color: #ffffff; /* Белый текст */
+    font-size: 1.2rem;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: #2563eb; /* Яркий синий при наведении */
+}
+
+button i {
+    margin-right: 5px;
 }
