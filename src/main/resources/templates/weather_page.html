@@ -2,9 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Books</title>
+  <title>Weather report</title>
+  <link rel="stylesheet" href="styles/Style.css">
 </head>
 <body>
-<h1>Welcome to Weather report page<span th:text="${userLogin}"></span></h1>
+<div th:insert="~{parts/navigation::navigation}"></div>
+<h1>Welcome to Weather report page  <span th:text="${userLogin}"></span></h1>
+<div th:insert="~{parts/footer::footer}"></div>
 </body>
 </html>
