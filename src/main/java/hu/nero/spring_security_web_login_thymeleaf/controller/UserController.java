@@ -7,14 +7,12 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -22,7 +20,7 @@ public class UserController {
   private final UserService userService;
 
   @GetMapping
-  public String getWeatherPage(
+  public String getUserPage(
       @RequestParam(required = false, name = "login") String login,
       @RequestParam(required = false) String email,
       Model model, HttpServletRequest request) {
@@ -41,8 +39,15 @@ public class UserController {
   }
 
   @GetMapping("/create")
-  public String getCreateUserPage() {
+  public String getCreateUserPage(Model model) {
+    model.addAttribute("newUser", new UserModel());
     return "create_user_page";
+  }
+
+  @PostMapping("/createUser")
+  public String createUser(@ModelAttribute UserModel user) {
+    userService.save(user);
+    return "redirect:/users";
   }
 }
 

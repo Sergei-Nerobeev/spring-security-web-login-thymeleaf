@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Weather Page</title>
 </head>
 <body>
-<form method="post" action="/createUser">
+<form method="post" action="/users/createUser" th:object="${newUser}">
   <label>
     <input type="text" name="name" placeholder="Name">
   </label>
   <label>
-    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="password" placeholder="Password">
   </label>
   <label>
     <input type="submit" value="Save">

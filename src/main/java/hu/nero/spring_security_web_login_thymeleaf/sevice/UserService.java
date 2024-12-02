@@ -13,16 +13,20 @@ public class UserService {
 
   static {
     users = new ArrayList<>();
-    users.add(new UserModel(1,"Joe","1234"));
-    users.add(new UserModel(2,"Ann","1234"));
-    users.add(new UserModel(3,"Ted","1234"));
-    users.add(new UserModel(4,"Nora","1234"));
+    users.add(new UserModel(1, "Joe", "1234"));
+    users.add(new UserModel(2, "Ann", "1234"));
+    users.add(new UserModel(3, "Ted", "1234"));
+    users.add(new UserModel(4, "Nora", "1234"));
   }
 
   public List<UserModel> getAllUsersByLogin(String login) {
-    if(login != null) {
+    if (login != null) {
       return users;
     }
     return users.stream().filter(user -> user.getId() > 2).toList();
+  }
+
+  public void save(UserModel user) {
+    users.add(user);
   }
 }
