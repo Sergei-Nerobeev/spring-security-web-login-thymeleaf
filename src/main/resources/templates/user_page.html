@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Page</title>
+  <link rel="stylesheet" href="styles/Style.css">
+</head>
+<body>
+<div th:insert="~{parts/navigation::navigation}"></div>
+<h1>Welcome to User page <span th:text="${userLogin}"></span></h1>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Password</th>
+  </tr>
+  <th:block th:each="user : ${users}">
+    <tr>
+      <td th:text="${user.id}"></td>
+      <td th:text="${user.name}"></td>
+      <td th:text="${user.password}"></td>
+    </tr>
+  </th:block>
+
+</table>
+<div th:insert="~{parts/footer::footer}"></div>
+</body>
+</html>
